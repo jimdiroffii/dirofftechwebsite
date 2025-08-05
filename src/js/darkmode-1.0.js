@@ -16,7 +16,6 @@ const root = document.documentElement;
 themeToggle.addEventListener('click', () => {
 	root.classList.toggle('dark-mode'); 
 	
-	/* Save user preference to localStorage */
 	if (root.classList.contains('dark-mode')) {
 		localStorage.setItem('theme', 'dark-mode');
 	}

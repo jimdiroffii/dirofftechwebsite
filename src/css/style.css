@@ -6,9 +6,32 @@
 	--clr-light: #fff;
 }
 
+/***
+ * Fonts
+ */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-variable.woff2') format('woff2'); /* Adjust filename */
+  font-weight: 100 900; /* The range of weights this font supports */
+  font-style: normal;
+  font-display: swap; /* Crucial for performance! */
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-italic-variable.woff2') format('woff2'); /* Adjust filename */
+  font-weight: 100 900; /* The range of weights this font supports */
+  font-style: italic;
+  font-display: swap; /* Crucial for performance! */
+}
+
+/***
+ * Primary Styles
+ */
+
 html {
-	/* Overall Font Settings */
-	font-family: "Roboto", sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
@@ -57,15 +80,10 @@ header {
 	padding: 0 1em;
 }
 
-/* footer {
-	padding: 5px;
-} */
-
 /***
  * Dark mode settings
  */
 
-/* When html has .dark-mode, apply these styles to the body */
 html.dark-mode body {
 	background-color: var(--clr-dark);
 	color: var(--clr-light);
@@ -103,7 +121,6 @@ html.dark-mode .moon-icon {
 	display: inline-block;
 }
 
-/* Style links for dark mode */
 html.dark-mode a {
 	color: var(--clr-light);
 }
