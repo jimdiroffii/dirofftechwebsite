@@ -1,0 +1,113 @@
+/***
+ * Root selector for dark mode colors
+ */
+:root {
+	--clr-dark: #333;
+	--clr-light: #fff;
+}
+
+html {
+	/* Overall Font Settings */
+	font-family: "Roboto", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	height: 100%;
+
+	/* Transition for theme changes */
+	transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	padding: 0 1em;
+
+	background-color: var(--clr-light);
+	color: var(--clr-dark);
+}
+
+a {
+	color: var(--clr-dark);
+	text-decoration: none;
+}
+
+header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1em 0;
+}
+
+.header-brand {
+	position: absolute;
+	left: 0;
+}
+
+.header-nav ul {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.header-nav li {
+	padding: 0 1em;
+}
+
+/* footer {
+	padding: 5px;
+} */
+
+/***
+ * Dark mode settings
+ */
+
+/* When html has .dark-mode, apply these styles to the body */
+html.dark-mode body {
+	background-color: var(--clr-dark);
+	color: var(--clr-light);
+}
+
+.toggle-container {
+	position: absolute;
+	right: 0;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+	color: var(--clr-dark);
+}
+
+.sun-icon, .moon-icon {
+	width: 24px;
+	height: 24px;
+	transition: opacity 0.3s;
+}
+
+/* Hide moon icon by default */
+.moon-icon {
+	display: none;
+}
+
+/* In dark mode, hide the sun icon */
+html.dark-mode .sun-icon {
+	display: none;
+}
+
+/* In dark mode, show the moon icon */
+html.dark-mode .moon-icon {
+	display: inline-block;
+}
+
+/* Style links for dark mode */
+html.dark-mode a {
+	color: var(--clr-light);
+}
+
+html.dark-mode .toggle-container {
+	color: var(--clr-light);
+}

@@ -1,0 +1,12 @@
+/* TEAM */
+	Just me: Jim Diroff II
+	Company: Diroff Technology Consulting
+	Location: United States
+	Email: jim@dirofftech.com
+	Socials: @jimdiroffii
+
+/* SITE */
+	Last Updated: 2025-08-04
+	Standards: HTML5, CSS3
+	Components: HTML, CSS
+	Software: VSCode, Firefox Developer Edition, Python, git
