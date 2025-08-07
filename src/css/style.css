@@ -1,167 +1,178 @@
 /***
- * Root selector for dark mode colors
+ * CSS Variables
+ * Central place to manage theme colors and other reusable values.
  */
 :root {
-	--clr-dark: #333;
+	--clr-dark: #000;
 	--clr-light: #fff;
 }
 
 /***
- * Fonts
+ * Font Definitions
+ * Self-hosted variable fonts for performance and flexibility.
  */
-
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/roboto-variable.woff2') format('woff2'); /* Adjust filename */
-  font-weight: 100 900; /* The range of weights this font supports */
-  font-style: normal;
-  font-display: swap; /* Crucial for performance! */
+	font-family: 'Roboto';
+	src: url('../fonts/roboto-variable.woff2') format('woff2');
+	font-weight: 100 900; /* The range of weights this font file supports */
+	font-style: normal;
+	font-display: swap; /* Tells the browser to show fallback font while this loads */
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/roboto-italic-variable.woff2') format('woff2'); /* Adjust filename */
-  font-weight: 100 900; /* The range of weights this font supports */
-  font-style: italic;
-  font-display: swap; /* Crucial for performance! */
+	font-family: 'Roboto';
+	src: url('../fonts/roboto-italic-variable.woff2') format('woff2');
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
 }
 
 /***
- * Primary Styles
+ * Global Styles
+ * Basic resets and default styles for the entire document.
  */
-
 html {
-	font-family: 'Roboto', sans-serif;
-	font-optical-sizing: auto;
+	font-family: 'Roboto', sans-serif; /* Sets the default font for the site */
 	font-weight: 400;
-	font-style: normal;
 	height: 100%;
 
-	/* Transition for theme changes */
+	/* Smooth transition for theme changes (e.g., light/dark mode) */
 	transition: background-color 0.3s, color 0.3s;
 }
 
 body {
-	padding: 0;
-	margin: 0;
-	height: 100%;
-
-	background-color: var(--clr-light);
-	color: var(--clr-dark);
+	margin: 0; /* Removes default browser margin */
+	background-color: lightseagreen; /* Temporary background for visualization */
 }
 
 a {
-	color: var(--clr-dark);
-	text-decoration: none;
-}
-
-header {
-	z-index: 100;
-	position: sticky;
-	top: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 1vw;
-	min-height: 1rem;
-	background-color: var(--clr-light);
-}
-
-.header-brand {
-	position: absolute;
-	left: 1vw;
-}
-
-.header-nav ul {
-	display: flex;
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-}
-
-.header-nav li {
-	padding: 0 1em;
-}
-
-main {
-	height: 100dvh;
-	overflow-y: auto;
-	/* scroll-snap-type: y mandatory; */
-	/* scroll-padding-top: 0; */
-}
-
-section {
-	height: 100dvh;
-	/* scroll-snap-align: start; */
-	/* scroll-snap-stop: always; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: clamp(1.5rem,4vw,3rem);
-}
-
-#hero {
-	flex-direction: column;
-	background-color: aqua;
-	text-align: center;
-}
-
-#about {
-	background-color: blueviolet;
-}
-
-#contact {
-	background-color: chartreuse;
+	text-decoration: none; /* Removes the default underline from links */
 }
 
 /***
- * Dark mode settings
+ * Layout Helpers
+ * Reusable classes for structuring page content.
  */
+.container {
+	width: 90%; /* Ensures some padding on very narrow screens */
+	max-width: 1200px; /* Sets the maximum width for content on large screens */
+	margin-inline: auto; /* A modern way to center the container horizontally */
+	height: 100%;
+	background-color: lightslategrey; /* Temporary background for visualization */
 
-html.dark-mode body {
-	background-color: var(--clr-dark);
-	color: var(--clr-light);
-}
-
-.toggle-container {
-	position: absolute;
-	right: 1vw;
-	cursor: pointer;
-	background: transparent;
-	border: none;
-	padding: 0;
-	margin: 0;
-	color: var(--clr-dark);
+	/* Establishes a grid for direct children */
+	display: grid;
 	align-items: center;
-	height: 24px;
-	width: 24px;
 }
 
-.sun-icon, .moon-icon {
-	width: 24px;
-	height: 24px;
-	transition: opacity 0.3s;
+/***
+ * Component: Header
+ * Styles for the main site header and its navigation.
+ */
+header {
+	background-color: lightpink; /* Temporary background for visualization */
+	padding: 1rem 0;
+	min-height: 2.5rem;
+
+	/* Provides the positioning anchor for the absolute-positioned mobile menu */
+	position: relative;
 }
 
-/* Hide moon icon by default */
-.moon-icon {
-	display: none;
+header .container {
+	/* Defines a 3-column grid: [Brand] [Nav] [Empty Space] for perfect centering */
+	grid-template-columns: 1fr auto 1fr;
 }
 
-/* In dark mode, hide the sun icon */
-html.dark-mode .sun-icon {
-	display: none;
+.header-brand {
+	grid-column: 1 / 2; /* Places the brand in the first column */
+	justify-self: start; /* Aligns the brand to the left of its column */
 }
 
-/* In dark mode, show the moon icon */
-html.dark-mode .moon-icon {
-	display: inline-block;
+.header-nav {
+	grid-column: 2 / 3; /* Places the navigation in the center column */
 }
 
-html.dark-mode a {
-	color: var(--clr-light);
+.header-nav ul {
+	display: flex; /* Aligns nav links in a row */
+	margin: 0;
+	padding: 0;
+	list-style-type: none; /* Removes default bullet points */
 }
 
-html.dark-mode .toggle-container {
-	color: var(--clr-light);
+.header-nav li {
+	padding: 0 1em; /* Adds space between navigation links */
+}
+
+.hamburger {
+	display: none; /* Hidden by default on desktop */
+	background: none;
+	border: none;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+/***
+ * Component: Main Content
+ * Styles for the primary content area of the page.
+ */
+main {
+	min-height: 100px; /* Placeholder height */
+}
+
+/***
+ * Component: Footer
+ * Styles for the main site footer.
+ */
+footer {
+	/* Footer-specific styles will go here */
+}
+
+/***
+ * Responsive Overrides
+ * Styles that apply only on screens smaller than 768px.
+ */
+@media (max-width: 768px) {
+	header .container {
+		/* Switch to a 2-column grid on mobile: [Brand] [Hamburger] */
+		grid-template-columns: 1fr auto;
+	}
+
+	/* --- Mobile Navigation Dropdown Styles --- */
+	.header-nav {
+		grid-column: initial; /* Resets the desktop grid placement */
+
+		/* Takes the nav out of the document flow so it can be a dropdown */
+		position: absolute;
+		top: 100%; /* Positions it directly below the header */
+		right: 1vw;
+		width: 150px;
+		background: lightgreen;
+
+		/* Hides the menu by default so it can be animated open */
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease; /* Smooth dropdown animation */
+		
+		border-radius: 0 0 5px 5px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.header-nav.open {
+		max-height: 200px; /* Reveals the menu when the .open class is added by JS */
+	}
+
+	.header-nav ul {
+		flex-direction: column; /* Stacks the nav links vertically */
+		text-align: left;
+	}
+
+	.header-nav li {
+		padding: .75rem 1.25rem; /* Adjusts padding for vertical layout */
+	}
+
+	/* --- Hamburger Visibility --- */
+	.hamburger {
+		display: block; /* Makes the hamburger icon visible */
+		grid-column: 2 / 3; /* Places it in the second column of the mobile grid */
+	}
 }

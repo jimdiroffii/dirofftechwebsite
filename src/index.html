@@ -31,83 +31,69 @@
 	<link rel="stylesheet" href="/css/normalize.css" />
 	<link rel="stylesheet" href="/css/style.css" />
 
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" /> <!-- 🥚 -->
 	<link type="text/plain" rel="author" href="https://dirofftech.com/humans.txt" />
-
-	<!-- Fetch user preferences before page renders -->
-	<script>
-		(function () {
-			try {
-				const theme = localStorage.getItem('theme');
-				if (theme === 'dark-mode') {
-					document.documentElement.classList.add('dark-mode');
-				}
-			} catch (e) {
-				console.error("Error applying user preferences:", e);
-			}
-		})();
-	</script>
 </head>
 
 <body>
 	<header>
-		<div class="header-brand">
-			<a href="/index.html">Diroff Technology Consulting</a>
+		<div class="container">
+			<div class="header-brand">
+				<a href="/index.html">Diroff Technology Consulting</a>
+			</div>
+
+
+			<nav class="header-nav">
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+
+
+			<!-- Hamburger Menu (Mobile-only) -->
+			<button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+				<svg class="hamburger-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+					aria-hidden="true" focusable="false">
+					<rect y="4" width="24" height="2"></rect>
+					<rect y="11" width="24" height="2"></rect>
+					<rect y="18" width="24" height="2"></rect>
+				</svg>
+			</button>
+			<!-- End Hamburger Menu -->
+
 		</div>
-
-		<nav class="header-nav">
-			<ul>
-				<li><a href="#hero">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-
-		<button class="toggle-container" id="themeToggle" aria-label="Toggle theme">
-			<svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-				<circle cx="12" cy="12" r="5"></circle>
-				<line x1="12" y1="1" x2="12" y2="3"></line>
-				<line x1="12" y1="21" x2="12" y2="23"></line>
-				<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-				<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-				<line x1="1" y1="12" x2="3" y2="12"></line>
-				<line x1="21" y1="12" x2="23" y2="12"></line>
-				<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-				<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-			</svg>
-			<svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-			</svg>
-		</button>
 	</header>
 	<main>
-		<section id="hero">
-			<img src="https://placehold.co/600x400" />
-			<h1>Diroff Technology Consulting</h1>
-			<p>Design. Implement. Secure. Support.</p>
-		</section>
-		<section id="about">
-			<h2>About</h2>
-		</section>
-		<section id="contact">
-			<h2>Contact</h2>
-		</section>
+		<div class="container">
+			<p>main content</p>
+		</div>
 	</main>
 	<footer>
-		<ul>
-			<li>Lorem</li>
-			<li>Lorem</li>
-			<li>Lorem</li>
-			<li>Lorem</li>
-			<li>Lorem</li>
-			<li>Lorem</li>
-		</ul>
-		<a href="/humans.txt" target="_blank"><img src="/img/humanstxt_isolated_blank.gif"
-				alt="View the Humans.txt file, which describes the people behind this website." /></a>
+		<div class="container">
+			<a href="/humans.txt" target="_blank"><img src="/img/humanstxt_isolated_blank.gif"
+					alt="View the Humans.txt file, which describes the people behind this website." /></a>
+		</div>
 	</footer>
-	<script type="module" src="/js/darkmode-1.0.js"></script>
+
+	<script src="/js/hamburger.js"></script>
 </body>
+
+<!-----------------------------------------------------------------------------
+     _________
+    / ======= \
+   / __________\
+  | ___________ |
+  | | -       | |
+  | |         | |
+  | |_________| |________________________
+  \=____________/   @jimdiroffii - 2025  )
+  / """"""""""" \                       /
+ / ::::::::::::: \                  =D-'
+(_________________)
+
+ASCII Source: https://www.asciiart.eu/computers/computers
+------------------------------------------------------------------------------>
 
 </html>
