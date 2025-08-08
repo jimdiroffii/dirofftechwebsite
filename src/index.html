@@ -79,10 +79,10 @@
 	<main id="main">
 		<section class="hero">
 			<picture class="hero-image">
-				<source id="hero-avif" type="image/avif" sizes="100vw" />
-				<source id="hero-webp" type="image/webp" sizes="100vw" />
-				<img id="hero-jpg" alt="A dark datacenter with server racks showing blue lights" loading="eager" width="1536"
-					height="1024" sizes="100vw" />
+				<source id="dark_server_racks_blue_lights-avif" type="image/avif" sizes="100vw" />
+				<source id="dark_server_racks_blue_lights-webp" type="image/webp" sizes="100vw" />
+				<img id="dark_server_racks_blue_lights-jpg" alt="A dark datacenter with server racks showing blue lights"
+					loading="eager" width="1536" height="1024" sizes="100vw" />
 			</picture>
 			<div class="hero-content container">
 				<div class="hero-text">
@@ -92,6 +92,99 @@
 				</div>
 			</div>
 		</section>
+
+		<section id="services" class="services-section">
+			<div class="container">
+				<h2 class="section-title">Our Services</h2>
+				<div class="services-grid">
+					<article class="service-placard">
+						<picture class="placard-image">
+							<source id="dark_server_rack_white_walls-avif" type="image/avif" />
+							<source id="dark_server_rack_white_walls-webp" type="image/webp" />
+							<img id="dark_server_rack_white_walls-jpg"
+								alt="A single black server rack in a white walled data center room." loading="lazy" width="375"
+								height="211" />
+						</picture>
+						<div class="placard-content">
+							<h3 class="placard-title">Managed IT & Infrastructure</h3>
+							<p class="placard-description">Proactive monitoring, maintenance, and management of your network and
+								server infrastructure to ensure uptime and performance.</p>
+						</div>
+					</article>
+					<article class="service-placard">
+						<picture class="placard-image">
+							<source id="cloud_dashboard_laptop_office-avif" type="image/avif" />
+							<source id="cloud_dashboard_laptop_office-webp" type="image/webp" />
+							<img id="cloud_dashboard_laptop_office-jpg"
+								alt="A developer's laptop showing a cloud services dashboard in an office setting." loading="lazy"
+								width="375" height="211" />
+						</picture>
+						<div class="placard-content">
+							<h3 class="placard-title">Cloud Solutions</h3>
+							<p class="placard-description">Expert migration, deployment, and management of cloud services on platforms
+								like AWS and Azure to enhance scalability and reduce costs.</p>
+						</div>
+					</article>
+					<article class="service-placard">
+						<picture class="placard-image">
+							<source id="compliance_checklist_pci_cmmc-avif" type="image/avif" />
+							<source id="compliance_checklist_pci_cmmc-webp" type="image/webp" />
+							<img id="compliance_checklist_pci_cmmc-jpg"
+								alt="A compliance checklist on a clipboard with PCI and CMMC logos." loading="lazy" width="375"
+								height="211" />
+						</picture>
+						<div class="placard-content">
+							<h3 class="placard-title">Regulatory Compliance</h3>
+							<p class="placard-description">Navigate complex regulatory landscapes like PCI DSS and CMMC with gap
+								analysis, policy development, and audit preparation.</p>
+						</div>
+					</article>
+					<article class="service-placard">
+						<picture class="placard-image">
+							<source id="airport_point_of_sale_pos-avif" type="image/avif" />
+							<source id="airport_point_of_sale_pos-webp" type="image/webp" />
+							<img id="airport_point_of_sale_pos-jpg"
+								alt="A point-of-sale terminal being used at a retail counter in an airport." loading="lazy" width="375"
+								height="211" />
+						</picture>
+						<div class="placard-content">
+							<h3 class="placard-title">Point-of-Sale Systems</h3>
+							<p class="placard-description">Reliable deployment and support for retail and hospitality POS systems,
+								ensuring secure transactions and seamless operations.</p>
+						</div>
+					</article>
+					<article class="service-placard">
+						<picture class="placard-image">
+							<source id="dark_red_desktop_hack_security-avif" type="image/avif" />
+							<source id="dark_red_desktop_hack_security-webp" type="image/webp" />
+							<img id="dark_red_desktop_hack_security-jpg"
+								alt="A computer screen with red code and a security lock icon representing cybersecurity."
+								loading="lazy" width="375" height="211" />
+						</picture>
+						<div class="placard-content">
+							<h3 class="placard-title">Cybersecurity Services</h3>
+							<p class="placard-description">Comprehensive security assessments, penetration testing, and incident
+								response to protect your digital assets from evolving threats.</p>
+						</div>
+					</article>
+					<article class="service-placard">
+						<picture class="placard-image">
+							<source id="bricked_computer_system_hardening-avif" type="image/avif" />
+							<source id="bricked_computer_system_hardening-webp" type="image/webp" />
+							<img id="bricked_computer_system_hardening-jpg"
+								alt="A computer built out of bricks to symbolize a hardened, secure system." loading="lazy" width="375"
+								height="211" />
+						</picture>
+						<div class="placard-content">
+							<h3 class="placard-title">System Hardening</h3>
+							<p class="placard-description">Fortify your servers and workstations by minimizing attack surfaces and
+								implementing security controls based on CIS benchmarks.</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
 	</main>
 	<footer>
 		<div class="container">
@@ -101,7 +194,10 @@
 	</footer>
 
 	<script type="module" src="/js/hamburger.js" defer></script>
-	<script type="module" src="/js/hero-image.js" defer></script>
+	<!-- <script type="module" src="/js/hero-image.js" defer></script>
+	<script type="module" src="/js/service-infrastructure-image.js" defer></script> -->
+	<script type="module" src="/js/image-manifest.js" defer></script>
+	<script type="module" src="/js/image-loader.js" defer></script>
 </body>
 
 <!-----------------------------------------------------------------------------
