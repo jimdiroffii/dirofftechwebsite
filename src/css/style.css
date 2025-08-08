@@ -22,7 +22,7 @@
  */
 @font-face {
 	font-family: "Roboto";
-	src: url("../fonts/roboto-variable.woff2") format("woff2");
+	src: url("/fonts/roboto-variable.woff2") format("woff2");
 	font-weight: 100 900; /* The range of weights this font file supports */
 	font-style: normal;
 	font-display: swap; /* Tells the browser to show fallback font while this loads */
@@ -30,7 +30,7 @@
 
 @font-face {
 	font-family: "Roboto";
-	src: url("../fonts/roboto-italic-variable.woff2") format("woff2");
+	src: url("/fonts/roboto-italic-variable.woff2") format("woff2");
 	font-weight: 100 900;
 	font-style: italic;
 	font-display: swap;
