@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <!--
 	Site written from scratch in pure HTML/CSS/JS by Jim Diroff II for Diroff Technology Consulting
 
-	Get your own site built! Contact jim@dirofftech.com for a quote!
+	View unminified source code on Github: https://github.com/jimdiroffii/dirofftechwebsite
+
+	Get your own site built! Contact us for a quote!
 -->
 
 <head>
@@ -53,7 +55,7 @@
 				<a href="/index.html">Diroff Technology Consulting</a>
 			</div>
 
-			<!-- Hamburger Menu (Mobile-only) -->
+			<!-- Hamburger Menu (Mobile-only) - Must be above `nav` for tabbing order -->
 			<button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
 				<svg class="hamburger-icon" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
 					aria-hidden="true" focusable="false">
@@ -66,19 +68,30 @@
 
 			<nav class="header-nav" aria-label="Main navigation">
 				<ul>
-					<li><a href="#home">Home</a></li>
+					<li><a href="#hero">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
+
 	<main id="main">
-		<div class="container">
-			<section id="hero">Hero Section</section>
-			<section id="services">Services Section</section>
-			<section id="contact">Contact Section</section>
-		</div>
+		<section class="hero">
+			<picture class="hero-image">
+				<source id="hero-avif" type="image/avif" sizes="100vw" />
+				<source id="hero-webp" type="image/webp" sizes="100vw" />
+				<img id="hero-jpg" alt="A dark datacenter with server racks showing blue lights" loading="eager" width="1536"
+					height="1024" sizes="100vw" />
+			</picture>
+			<div class="hero-content container">
+				<div class="hero-text">
+					<h1>Secure systems. Zero excuses.</h1>
+					<p>Bespoke infrastructure, cloud, and security solutions delivered personally, on time and built to last</p>
+					<a href="#contact" class="button">Get a consultation</a>
+				</div>
+			</div>
+		</section>
 	</main>
 	<footer>
 		<div class="container">
@@ -88,6 +101,7 @@
 	</footer>
 
 	<script type="module" src="/js/hamburger.js" defer></script>
+	<script type="module" src="/js/hero-image.js" defer></script>
 </body>
 
 <!-----------------------------------------------------------------------------

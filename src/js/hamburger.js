@@ -1,3 +1,11 @@
+/******************************************************************************
+ * hamburger.js for Diroff Technology Consulting
+ * 
+ * This js file provides the animation and controls for the mobile-friendly
+ * "hamburger" menu that appears when a screen width is below a certain size.
+ *
+ *****************************************************************************/
+
 document.addEventListener("DOMContentLoaded", () => {
 	const burger = document.querySelector(".hamburger");
 	const nav = document.querySelector(".header-nav");

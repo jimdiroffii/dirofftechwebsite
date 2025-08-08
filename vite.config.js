@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { imagetools } from 'vite-imagetools';
 
 export default defineConfig({
 	// Project Source Files
@@ -12,6 +13,7 @@ export default defineConfig({
     emptyOutDir: true // Clears the dist directory before building
   },
   plugins: [
+    imagetools(),
     viteStaticCopy({
       targets: [
         {
