@@ -29,13 +29,6 @@
 
 	<title>Diroff Technology Consulting</title>
 
-	<!-- The 2 commented out sections below refer to external sources for files - Google Fonts and Normalize.css -->
-	<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-		rel="stylesheet"> -->
-	<!-- <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" /> -->
-
 	<link rel="preload" href="/fonts/roboto-variable.woff2" as="font" type="font/woff2" crossorigin />
 
 	<link rel="stylesheet" href="/css/normalize.css" />
@@ -81,7 +74,7 @@
 			<picture class="hero-image">
 				<source id="dark_server_racks_blue_lights-avif" type="image/avif" sizes="100vw" />
 				<source id="dark_server_racks_blue_lights-webp" type="image/webp" sizes="100vw" />
-				<img id="dark_server_racks_blue_lights-jpg" alt="A dark datacenter with server racks showing blue lights"
+				<img id="dark_server_racks_blue_lights-jpeg" alt="A dark datacenter with server racks showing blue lights"
 					loading="eager" width="1536" height="1024" sizes="100vw" />
 			</picture>
 			<div class="hero-content container">
@@ -101,7 +94,7 @@
 						<picture class="placard-image">
 							<source id="dark_server_rack_white_walls-avif" type="image/avif" />
 							<source id="dark_server_rack_white_walls-webp" type="image/webp" />
-							<img id="dark_server_rack_white_walls-jpg"
+							<img id="dark_server_rack_white_walls-jpeg"
 								alt="A single black server rack in a white walled data center room." loading="lazy" width="375"
 								height="211" />
 						</picture>
@@ -115,7 +108,7 @@
 						<picture class="placard-image">
 							<source id="cloud_dashboard_laptop_office-avif" type="image/avif" />
 							<source id="cloud_dashboard_laptop_office-webp" type="image/webp" />
-							<img id="cloud_dashboard_laptop_office-jpg"
+							<img id="cloud_dashboard_laptop_office-jpeg"
 								alt="A developer's laptop showing a cloud services dashboard in an office setting." loading="lazy"
 								width="375" height="211" />
 						</picture>
@@ -129,7 +122,7 @@
 						<picture class="placard-image">
 							<source id="compliance_checklist_pci_cmmc-avif" type="image/avif" />
 							<source id="compliance_checklist_pci_cmmc-webp" type="image/webp" />
-							<img id="compliance_checklist_pci_cmmc-jpg"
+							<img id="compliance_checklist_pci_cmmc-jpeg"
 								alt="A compliance checklist on a clipboard with PCI and CMMC logos." loading="lazy" width="375"
 								height="211" />
 						</picture>
@@ -143,7 +136,7 @@
 						<picture class="placard-image">
 							<source id="airport_point_of_sale_pos-avif" type="image/avif" />
 							<source id="airport_point_of_sale_pos-webp" type="image/webp" />
-							<img id="airport_point_of_sale_pos-jpg"
+							<img id="airport_point_of_sale_pos-jpeg"
 								alt="A point-of-sale terminal being used at a retail counter in an airport." loading="lazy" width="375"
 								height="211" />
 						</picture>
@@ -157,7 +150,7 @@
 						<picture class="placard-image">
 							<source id="dark_red_desktop_hack_security-avif" type="image/avif" />
 							<source id="dark_red_desktop_hack_security-webp" type="image/webp" />
-							<img id="dark_red_desktop_hack_security-jpg"
+							<img id="dark_red_desktop_hack_security-jpeg"
 								alt="A computer screen with red code and a security lock icon representing cybersecurity."
 								loading="lazy" width="375" height="211" />
 						</picture>
@@ -171,7 +164,7 @@
 						<picture class="placard-image">
 							<source id="bricked_computer_system_hardening-avif" type="image/avif" />
 							<source id="bricked_computer_system_hardening-webp" type="image/webp" />
-							<img id="bricked_computer_system_hardening-jpg"
+							<img id="bricked_computer_system_hardening-jpeg"
 								alt="A computer built out of bricks to symbolize a hardened, secure system." loading="lazy" width="375"
 								height="211" />
 						</picture>
@@ -185,6 +178,31 @@
 			</div>
 		</section>
 
+		<section id="contact" class="contact-section">
+			<div class="container">
+				<h2 class="section-title">Contact Us</h2>
+				<form id="contact-form" class="contact-form" novalidate>
+					<div class="form-group">
+						<input type="text" id="name" name="name" required autocomplete="name" placeholder=" ">
+						<label for="name">Name</label>
+						<p class="error-message" aria-live="polite"></p>
+					</div>
+					<div class="form-group">
+						<input type="email" id="email" name="email" required autocomplete="email" placeholder=" ">
+						<label for="email">Email</label>
+						<p class="error-message" aria-live="polite"></p>
+					</div>
+					<div class="form-group">
+						<textarea id="message" name="message" rows="6" required placeholder=" "></textarea>
+						<label for="message">Message</label>
+						<p class="error-message" aria-live="polite"></p>
+					</div>
+					<button type="submit" class="button button-outline">Send Message</button>
+					<div id="form-status" class="form-status" aria-live="assertive"></div>
+				</form>
+			</div>
+		</section>
+
 	</main>
 	<footer>
 		<div class="container">
@@ -194,8 +212,6 @@
 	</footer>
 
 	<script type="module" src="/js/hamburger.js" defer></script>
-	<!-- <script type="module" src="/js/hero-image.js" defer></script>
-	<script type="module" src="/js/service-infrastructure-image.js" defer></script> -->
 	<script type="module" src="/js/image-manifest.js" defer></script>
 	<script type="module" src="/js/image-loader.js" defer></script>
 </body>

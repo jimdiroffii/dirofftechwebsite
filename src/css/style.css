@@ -29,14 +29,6 @@
 	font-display: swap; /* Tells the browser to show fallback font while this loads */
 }
 
-@font-face {
-	font-family: "Roboto";
-	src: url("/fonts/roboto-italic-variable.woff2") format("woff2");
-	font-weight: 100 900;
-	font-style: italic;
-	font-display: swap;
-}
-
 /***
  * Global Styles
  * Basic resets and default styles for the entire document.
@@ -328,6 +320,98 @@ header .container {
 .placard-description {
 	margin-bottom: 0;
 	color: #ccc; /* Slightly lighter than pure white for contrast */
+}
+
+/***
+ * Component: Contact Section
+ * Styles for the contact form area.
+ */
+.contact-section {
+	background-color: var(--clr-dark);
+	padding-block: 4rem;
+}
+
+.contact-form {
+	display: grid;
+	gap: 2rem; /* Increased gap for the new layout */
+	max-width: 700px;
+	margin-inline: auto;
+}
+
+.form-group {
+	position: relative; /* Establishes the positioning context for the label */
+}
+
+.form-group label {
+	position: absolute;
+	top: 50%;
+	left: 0.75em;
+	transform: translateY(-50%);
+	color: #999;
+	pointer-events: none; /* Allows clicks to pass through to the input */
+	transition: all 0.2s ease-in-out;
+}
+
+/* Add the required asterisk to labels for required fields */
+.form-group input:required + label::after,
+.form-group textarea:required + label::after {
+	content: " *";
+	color: #ff9a9a;
+}
+
+.form-group input,
+.form-group textarea {
+	background-color: var(--clr-darkgrey);
+	color: var(--clr-light);
+	border: 1px solid #444;
+	border-radius: 5px;
+	padding: 0.75em;
+	font-family: inherit;
+	font-size: 1rem;
+	width: 100%; /* Ensure inputs fill the group */
+	transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* The "floating label" magic happens here */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+	top: 0;
+	transform: translateY(-50%);
+	font-size: 0.75rem;
+	background-color: var(--clr-dark); /* Match the section background */
+	padding-inline: 0.25em;
+	color: #ccc;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+	border-color: #666;
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+	outline: none;
+	border-color: #005fcc;
+	box-shadow: 0 0 0 2px rgba(0, 95, 204, 0.5);
+}
+
+.form-group textarea {
+	resize: none;
+}
+
+.error-message {
+	font-size: 0.875rem;
+	color: #ff9a9a;
+	margin-top: 0.5rem;
+	min-height: 1.25em;
+}
+
+.form-status {
+	margin-top: 1rem;
+	font-weight: 700;
+	text-align: center;
 }
 
 /***
