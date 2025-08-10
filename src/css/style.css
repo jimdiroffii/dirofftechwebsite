@@ -15,6 +15,7 @@
 	--clr-dark: #000;
 	--clr-darkgrey: #222;
 	--clr-light: #fff;
+	--textarea-header-height: 0.8em;
 }
 
 /***
@@ -331,32 +332,45 @@ header .container {
 	padding-block: 4rem;
 }
 
+.contact-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
+	align-items: center;
+}
+
+.contact-text .section-title {
+	text-align: left;
+}
+
+.contact-text p {
+	font-size: 1.125rem;
+	color: #ccc;
+	line-height: 1.6;
+}
+
 .contact-form {
 	display: grid;
-	gap: 2rem; /* Increased gap for the new layout */
-	max-width: 700px;
-	margin-inline: auto;
+	gap: 1.5rem;
 }
 
 .form-group {
-	position: relative; /* Establishes the positioning context for the label */
+	position: relative;
 }
 
 .form-group label {
 	position: absolute;
-	top: 50%;
 	left: 0.75em;
 	transform: translateY(-50%);
-	color: #999;
-	pointer-events: none; /* Allows clicks to pass through to the input */
+	color: #ffffff;
+	pointer-events: none;
 	transition: all 0.2s ease-in-out;
 }
 
-/* Add the required asterisk to labels for required fields */
 .form-group input:required + label::after,
 .form-group textarea:required + label::after {
 	content: " *";
-	color: #ff9a9a;
+	color: #ff0000;
 }
 
 .form-group input,
@@ -368,37 +382,69 @@ header .container {
 	padding: 0.75em;
 	font-family: inherit;
 	font-size: 1rem;
-	width: 100%; /* Ensure inputs fill the group */
+	width: 100%;
 	transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* The "floating label" magic happens here */
 .form-group input:focus + label,
 .form-group input:not(:placeholder-shown) + label,
 .form-group textarea:focus + label,
 .form-group textarea:not(:placeholder-shown) + label {
 	top: 0;
 	transform: translateY(-50%);
-	font-size: 0.75rem;
-	background-color: var(--clr-dark); /* Match the section background */
+	font-size: 1.1rem;
+	font-weight: 500;
 	padding-inline: 0.25em;
-	color: #ccc;
-}
-
-.form-group input:hover,
-.form-group textarea:hover {
-	border-color: #666;
-}
-
-.form-group input:focus-visible,
-.form-group textarea:focus-visible {
-	outline: none;
-	border-color: #005fcc;
-	box-shadow: 0 0 0 2px rgba(0, 95, 204, 0.5);
+	color: #ffffff;
 }
 
 .form-group textarea {
-	resize: none;
+	resize: vertical;
+}
+
+#fax_number {
+	display: none;
+}
+
+/*** 
+ * Textarea Scrolling Fix
+ *
+ * With the label being halfway into the textarea, when the message box is
+ * scrolled up, the text goes behind the label, obscuring the text and label.
+ * This solution works by placing an invisible panel inside the textarea, that
+ * positions underneath the label, but above the message. 
+ */
+
+/* Ensure the label has a higher z-index so it's always on top */
+.form-group label {
+	z-index: 3;
+}
+
+/* Create the overlay panel for the message box */
+.form-group:has(#message)::before {
+	content: "";
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	right: 1px;
+	height: var(--textarea-header-height);
+	background-color: var(--clr-darkgrey);
+	z-index: 2; /* Places this panel ON TOP of the textarea */
+}
+
+/* Ensure the textarea text starts below the overlay */
+#message {
+	padding-top: var(--textarea-header-height);
+}
+
+/* --- End of Textarea Scrolling Fix --- */
+
+.contact-form .button {
+	width: 100%;
+	border: none;
+	cursor: pointer;
+	padding: 0.85em 1.5em;
+	font-size: 1rem;
 }
 
 .error-message {
@@ -412,6 +458,7 @@ header .container {
 	margin-top: 1rem;
 	font-weight: 700;
 	text-align: center;
+	min-height: 1.25em; /* Prevents layout shift */
 }
 
 /***
@@ -481,6 +528,16 @@ header .container {
 	.services-grid {
 		/* Switch to 2 columns on tablet-sized screens */
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.contact-layout {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.contact-text .section-title,
+	.contact-text p {
+		text-align: center; /* Center the text on mobile */
 	}
 }
 

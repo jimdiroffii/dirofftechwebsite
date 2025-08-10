@@ -24,8 +24,8 @@
 	<meta property="og:type" content="website" />
 
 	<!-- Uncomment the CSP and <base> lines below for production -->
-	<!-- <meta http-equiv="Content-Security-Policy" content="default-src https:" /> -->
-	<!-- <base href="https://dirofftech.com/" target="_blank" /> -->
+	<meta http-equiv="Content-Security-Policy" content="default-src https:" />
+	<base href="https://dirofftech.com/" target="_blank" />
 
 	<title>Diroff Technology Consulting</title>
 
@@ -62,7 +62,7 @@
 			<nav class="header-nav" aria-label="Main navigation">
 				<ul>
 					<li><a href="#hero">Home</a></li>
-					<li><a href="#about">About</a></li>
+					<li><a href="#services">About</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -180,40 +180,52 @@
 
 		<section id="contact" class="contact-section">
 			<div class="container">
-				<h2 class="section-title">Contact Us</h2>
-				<form id="contact-form" class="contact-form" novalidate>
-					<div class="form-group">
-						<input type="text" id="name" name="name" required autocomplete="name" placeholder=" ">
-						<label for="name">Name</label>
-						<p class="error-message" aria-live="polite"></p>
+				<div class="contact-layout">
+					<div class="contact-text">
+						<h2 class="section-title">Let's Build Together</h2>
+						<p>
+							Ready to enhance your infrastructure, secure your systems, or navigate complex compliance requirements?
+							Reach out today for a personalized consultation. We're here to provide the expertise and support your
+							business needs to thrive.
+						</p>
 					</div>
-					<div class="form-group">
-						<input type="email" id="email" name="email" required autocomplete="email" placeholder=" ">
-						<label for="email">Email</label>
-						<p class="error-message" aria-live="polite"></p>
-					</div>
-					<div class="form-group">
-						<textarea id="message" name="message" rows="6" required placeholder=" "></textarea>
-						<label for="message">Message</label>
-						<p class="error-message" aria-live="polite"></p>
-					</div>
-					<button type="submit" class="button button-outline">Send Message</button>
-					<div id="form-status" class="form-status" aria-live="assertive"></div>
-				</form>
+
+					<form id="contactForm" class="contact-form" novalidate
+						data-api-url="https://dna33rrqoc.execute-api.us-east-2.amazonaws.com/contact">
+						<div class="form-group">
+							<input type="text" id="name" name="name" required placeholder=" ">
+							<label for="name">Name</label>
+							<div class="error-message"></div>
+						</div>
+
+						<div class="form-group">
+							<input type="email" id="email" name="email" required placeholder=" ">
+							<label for="email">Email</label>
+							<div class="error-message"></div>
+						</div>
+
+						<div class="form-group">
+							<textarea id="message" name="message" required placeholder=" " rows="5"></textarea>
+							<label for="message">Message</label>
+							<div class="error-message"></div>
+						</div>
+
+						<input type="text" id="fax_number" name="fax_number" />
+
+						<button type="submit" class="button">Send Message</button>
+
+						<p id="formStatus" class="form-status"></p>
+					</form>
+				</div>
 			</div>
 		</section>
 
 	</main>
-	<footer>
-		<div class="container">
-			<a href="/humans.txt" target="_blank"><img src="/img/humanstxt_isolated_blank.gif"
-					alt="View the Humans.txt file, which describes the people behind this website." /></a>
-		</div>
-	</footer>
 
 	<script type="module" src="/js/hamburger.js" defer></script>
 	<script type="module" src="/js/image-manifest.js" defer></script>
 	<script type="module" src="/js/image-loader.js" defer></script>
+	<script type="module" src="/js/contact-form.js" defer></script>
 </body>
 
 <!-----------------------------------------------------------------------------
